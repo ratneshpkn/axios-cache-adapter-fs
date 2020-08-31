@@ -1,0 +1,43 @@
+# Temp files
+.DS_Store
+*.swo
+*.swp
+**tmp**
+*.bak
+
+# IDE garbage
+.project
+.settings/*
+.vscode
+.idea
+
+# Metrics & Results
+.nyc_output
+coverage
+jsdoc
+.cache
+*.cpuprofile
+*.heapprofile
+lib-cov
+
+# Node and npm
+/node_modules/
+isolate-*-v8.log
+npm-debug.log
+package-lock.json
+dependency-cruiser-*.tgz
+
+# Yarn
+.pnp*
+.yarn/
+.yarnrc.yml
+yarn-error.log
+yarn.lock
+
+# Typescript v1 declaration files
+typings/
+
+# Outputs
+build
+dist
+lib

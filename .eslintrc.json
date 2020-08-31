@@ -1,0 +1,42 @@
+{
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "extends": [
+    "plugin:sonarjs/recommended",
+    "eslint:recommended",
+    "eslint-config-google",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "sonarjs",
+    "@typescript-eslint"
+  ],
+  "rules": {
+    "@typescript-eslint/no-use-before-define": "off",
+    "@typescript-eslint/member-delimiter-style": "off",
+    // we're not ready for cognitive-complexity checks
+    "sonarjs/cognitive-complexity": "warn",
+    // largely inspired by eslint-config-google
+    "semi": ["error", "never"],
+    "quotes": ["error", "double", {"allowTemplateLiterals": true}],
+    "indent": ["error", 4, {"SwitchCase": 1}],
+    "max-len": ["warn", {"code": 120}],
+    // but even google can be stupid
+    "linebreak-style": "off",
+    "require-jsdoc": "off",
+    "valid-jsdoc": "off",
+    "new-cap": ["error", {"capIsNewExceptions": ["Router", "model"]}]
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "name": "axios-cache-adapter-fs",
+  "version": "0.1.0",
+  "description": "Use the local File System as a Store for axios-cache-adapter",
+  "homepage": "https://github.com/ratneshpkn/axios-cache-adapter-fs",
+  "author": {
+    "name": "Ratnesh Neema",
+    "email": "ratneshpkn@gmail.com",
+    "url": "https://ratneshneema.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ratneshpkn/axios-cache-adapter-fs.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "axios",
+    "cache",
+    "api",
+    "client",
+    "xhr"
+  ],
+  "bugs": {
+    "url": "https://github.com/ratneshpkn/axios-cache-adapter-fs/issues"
+  },
+  "scripts": {
+    "lint": "eslint --ext=jsx,ts,tsx src",
+    "build:dev": "rimraf './build/**/*' && npm run lint && tsc --watch",
+    "build": "rimraf './build/**/*' && npm run lint && tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0",
+    "@typescript-eslint/eslint-plugin": "^2.30.0",
+    "@typescript-eslint/parser": "^2.30.0",
+    "eslint": "^6.8.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-sonarjs": "^0.5.0",
+    "rimraf": "^3.0",
+    "ts-node": "^8.8.2",
+    "typescript": "^3.2.2"
+  },
+  "main": "lib/index.js",
+  "files": [
+    "lib/**/*"
+  ],
+  "types": "lib/index.d.ts"
+}
