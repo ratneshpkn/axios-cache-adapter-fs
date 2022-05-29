@@ -31,7 +31,7 @@ export class FileStore {
                 await fs.stat("cache")
             } catch (e) {
                 const err = e as any
-                console.log(e.message)
+                console.log(err.message)
                 if (err.code === "ENOENT") {
                     await fs.mkdir("cache")
                 }
