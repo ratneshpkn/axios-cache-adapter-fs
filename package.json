@@ -1,6 +1,6 @@
 {
   "name": "axios-cache-adapter-fs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Use the local File System as a Store for axios-cache-adapter",
   "homepage": "https://github.com/ratneshpkn/axios-cache-adapter-fs",
   "author": {
