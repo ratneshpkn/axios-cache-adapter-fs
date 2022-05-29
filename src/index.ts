@@ -26,15 +26,17 @@ function getHashCode(key: string): string {
 
 export class FileStore {
     constructor() {
-        try {
-            fs.stat("cache")
-        } catch (error) {
-            const err = error as any
-            if (err.code === "ENOENT") {
-                fs.mkdir("cache")
+        (async () => {
+            try {
+                await fs.stat("cache")
+            } catch (e) {
+                const err = e as any
+                console.log(e.message)
+                if (err.code === "ENOENT") {
+                    await fs.mkdir("cache")
+                }
             }
-            console.error(error)
-        }
+        })()
     }
     async getItem(key: string) {
         console.log(key)
