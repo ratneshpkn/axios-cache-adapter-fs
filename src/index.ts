@@ -57,7 +57,7 @@ export class FileStore {
     }
 
     async clear() {
-        await fs.rmdir("cache")
+        await fs.rm("cache", {recursive: true, force: true})
     }
 
     async length(): Promise<number> {
