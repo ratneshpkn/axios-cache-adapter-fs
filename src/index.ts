@@ -39,9 +39,12 @@ export class FileStore {
         })()
     }
     async getItem(key: string) {
-        const item = (await fs.readFile("cache/" + getHashCode(key))) || null
-
-        return JSON.parse(item?.toString())
+        try {
+            const item = await fs.readFile("cache/" + getHashCode(key))
+            return JSON.parse(item?.toString())
+        } catch (e) {
+            return undefined
+        }
     }
 
     async setItem(key: string, value: any) {
@@ -50,7 +53,11 @@ export class FileStore {
     }
 
     async removeItem(key: string) {
-        await fs.unlink("cache/" + getHashCode(key))
+        try {
+            await fs.unlink("cache/" + getHashCode(key))
+        } catch (e) {
+            console.error(e)
+        }
     }
 
     async clear() {
