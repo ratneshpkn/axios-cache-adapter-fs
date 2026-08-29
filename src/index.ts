@@ -31,7 +31,7 @@ export class FileStore {
                 await fs.stat("cache")
             } catch (e) {
                 const err = e as any
-                console.log(err.message)
+                console.error(err)
                 if (err.code === "ENOENT") {
                     await fs.mkdir("cache")
                 }
@@ -39,20 +39,17 @@ export class FileStore {
         })()
     }
     async getItem(key: string) {
-        console.log(key)
         const item = (await fs.readFile("cache/" + getHashCode(key))) || null
 
         return JSON.parse(item?.toString())
     }
 
     async setItem(key: string, value: any) {
-        console.log(key)
         await fs.writeFile("cache/" + getHashCode(key), JSON.stringify(value))
         return value
     }
 
     async removeItem(key: string) {
-        console.log(key)
         await fs.unlink("cache/" + getHashCode(key))
     }
 
@@ -62,7 +59,6 @@ export class FileStore {
 
     async length(): Promise<number> {
         const files = await fs.readdir("cache")
-        console.log(files.length)
         return files.length
     }
 
